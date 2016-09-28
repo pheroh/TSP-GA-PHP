@@ -67,4 +67,3 @@ print("<br>Finished.");
 print("<br>Final distance: " . $pop->getFittest()->getDistance());
 print("<br>Solution:");
 print($pop->getFittest());
-
