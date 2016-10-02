@@ -9,14 +9,14 @@ class Tour
 
     public function __construct()
     {
-        for ($i = 0; $i < TourManager::numberOfCities(); $i++) {
+        for ($i = 0, $len = TourManager::numberOfCities(); $i < $len; $i++) {
             $this->tour[] = null;
         }
     }
 
     public function generateIndividual()
     {
-        for ($cityIndex = 0; $cityIndex < TourManager::numberOfCities(); $cityIndex++) {
+        for ($cityIndex = 0, $len = TourManager::numberOfCities(); $cityIndex < $len; $cityIndex++) {
             $this->setCity($cityIndex, TourManager::getCity($cityIndex));
         }
 
@@ -49,7 +49,7 @@ class Tour
         if ($this->distance == 0) {
             $tourDistance = 0;
 
-            for ($cityIndex = 0; $cityIndex < $this->tourSize(); $cityIndex++) {
+            for ($cityIndex = 0, $len = $this->tourSize(); $cityIndex < $len; $cityIndex++) {
                 $fromCity = $this->getCity($cityIndex);
                 $destinationCity = null;
                 
