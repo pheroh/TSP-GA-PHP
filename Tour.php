@@ -82,14 +82,7 @@ class Tour
 
     public function __toString()
     {
-        $genString = "|";
-
-        for ($i = 0; $i < $this->tourSize(); $i++) {
-            $genString .= $this->getCity($i) . '|';
-        }
-
-        return $genString;
-
-     }
+        return implode('|', $this->tour);
+    }
 
 }
