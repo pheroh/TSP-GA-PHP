@@ -5,4 +5,4 @@ Direct PHP Conversion of the Java code found at http://www.theprojectspot.com/tu
 
 Branch 1.0 is a direct conversion with no optimization to the code.
 
-master branch contains improvements to code here and there.
+master branch contains PHP-specific code improvements & optimization.
