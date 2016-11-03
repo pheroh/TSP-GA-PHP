@@ -9,9 +9,7 @@ class Tour
 
     public function __construct()
     {
-        for ($i = 0, $len = TourManager::numberOfCities(); $i < $len; $i++) {
-            $this->tour[] = null;
-        }
+        $this->tour = array_fill(0, TourManager::numberOfCities(), null);
     }
 
     public function generateIndividual()
