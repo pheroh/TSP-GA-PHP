@@ -3,7 +3,7 @@ require_once 'City.php';
 require_once 'GA.php';
 require_once 'Tour.php';
 require_once 'TourManager.php';
-require_once 'Population';
+require_once 'Population.php';
 
 use tsp\City;
 use tsp\GA;
