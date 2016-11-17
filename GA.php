@@ -22,7 +22,7 @@ class GA
         // Crossover population
         // Loop over the new population's size and create individuals from
         // Current population
-        for ($i = $elitismOffset; $i < $newPopulation->populationSize(); $i++) {
+        for ($i = $elitismOffset, $len = $newPopulation->populationSize(); $i < $len; $i++) {
             $parent1 = self::tournamentSelection($pop);
             $parent2 = self::tournamentSelection($pop);
 
@@ -31,7 +31,7 @@ class GA
         }
 
         // Mutate the new population a bit to add some new genetic material
-        for ($i = $elitismOffset; $i < $newPopulation->populationSize(); $i++) {
+        for ($i = $elitismOffset, $len = $newPopulation->populationSize(); $i < $len; $i++) {
             self::mutate($newPopulation->getTour($i));
         }
 
@@ -45,7 +45,7 @@ class GA
         $startPos = (int) (TourManager::Random() * $parent1->tourSize());
         $endPos   = (int) (TourManager::Random() * $parent1->tourSize());
 
-        for ($i = 0; $i < $child->tourSize(); $i++) {
+        for ($i = 0, $len = $child->tourSize(); $i < $len; $i++) {
             if ($startPos < $endPos && $i > $startPos && $i < $endPos) {
                 $child->setCity($i, $parent1->getCity($i));
             } else if ($startPos > $endPos) {
@@ -55,9 +55,9 @@ class GA
             }
         }
 
-        for ($i = 0; $i < $parent2->tourSize(); $i++) {
+        for ($i = 0, $len = $parent2->tourSize(); $i < $len; $i++) {
             if (!$child->containsCity($parent2->getCity($i))) {
-                for ($ii = 0; $ii < $child->tourSize(); $ii++) {
+                for ($ii = 0, $len2 = $child->tourSize(); $ii < $len2; $ii++) {
                     if ($child->getCity($ii) == null) {
                         $child->setCity($ii, $parent2->getCity($i));
                         break;
