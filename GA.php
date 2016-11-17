@@ -48,10 +48,8 @@ class GA
         for ($i = 0, $len = $child->tourSize(); $i < $len; $i++) {
             if ($startPos < $endPos && $i > $startPos && $i < $endPos) {
                 $child->setCity($i, $parent1->getCity($i));
-            } else if ($startPos > $endPos) {
-                if (!($i < $startPos && $i > $endPos)) {
-                    $child->setCity($i, $parent1->getCity($i));
-                }
+            } else if ($startPos > $endPos && !($i < $startPos && $i > $endPos)) {
+                $child->setCity($i, $parent1->getCity($i));
             }
         }
 
